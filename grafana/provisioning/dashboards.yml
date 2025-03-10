@@ -6,4 +6,5 @@ providers:
     folder: ''
     type: file
     options:
-      path: ./dashboards
+      path: /var/lib/grafana/dashboards
+    editable: true
