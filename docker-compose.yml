@@ -26,8 +26,8 @@ services:
       - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
     volumes:
       - grafana_data:/var/lib/grafana
-      - ./grafana/provisioning/dashboards.yaml:/etc/grafana/provisioning/dashboards/dashboards.yaml
-      - ./grafana/provisioning/datasources.yaml:/etc/grafana/provisioning/datasources/datasources.yaml
+      - ./grafana/provisioning/dashboards.yml:/etc/grafana/provisioning/dashboards.yml
+      - ./grafana/provisioning/datasources.yml:/etc/grafana/provisioning/datasources.yml
       - ./grafana/dashboards:/var/lib/grafana/dashboards
     ports:
       - "3000:3000"
