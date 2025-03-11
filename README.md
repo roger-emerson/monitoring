@@ -1,2 +1,2 @@
-# grafana
-grafana
+# Grafana and Prometheus initialization
+Work in Progress
