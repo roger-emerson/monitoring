@@ -16,6 +16,19 @@ services:
       - "9100:9100"
     restart: unless-stopped
 
+  snmp-exporter:  
+    image: prom/snmp-exporter:latest
+    container_name: snmp-exporter
+
+    volumes:
+      - snmp_data:/snmp_data
+      - ./snmp:/etc/snmp-exporter
+    command: --config.file=/etc/snmp-exporter/snmp.yml
+    ports:
+      - "9116:9116"
+      - "161:161/udp"
+    restart: unless-stopped
+    
   grafana:
     image: grafana/grafana:latest
     container_name: grafana
@@ -34,3 +47,4 @@ services:
 volumes:
   prometheus_data:
   grafana_data:
+  snmp_data:
