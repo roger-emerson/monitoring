@@ -19,7 +19,6 @@ services:
   snmp-exporter:  
     image: prom/snmp-exporter:latest
     container_name: snmp-exporter
-
     volumes:
       - snmp_data:/snmp_data
       - ./snmp:/etc/snmp-exporter
