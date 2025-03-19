@@ -1,0 +1,12 @@
+services:
+  snmp-generator:
+    image: prom/snmp-generator:latest
+    container_name: snmp-generator
+    restart: unless-stopped
+    ports:
+      - "161:161/udp"
+    volumes:
+      - ./data:/data  # Path to store MIBs and simulated SNMP data
+    environment:
+      - SNMPSIM_CONFIG=/data/snmp.conf  # Configuration file
+    command: ["--data-dir", "/data", "--v2c-credentials", "public"]
